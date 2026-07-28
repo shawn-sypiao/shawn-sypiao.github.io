@@ -1,12 +1,19 @@
-const Arrow = () => <span aria-hidden="true">↗</span>;
-
-export default function Home() {
-  return (
-    <div className="site">
-      <header className="header">
-        <a className="name" href="#top">
-          Your Name
-        </a>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Personal homepage for a researcher working on reliable machine learning and intelligent systems."
+    />
+    <title>Your Name — Researcher &amp; Engineer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site">
+      <header class="header">
+        <a class="name" href="#top">Your Name</a>
         <nav aria-label="Primary navigation">
           <a href="#about">About</a>
           <a href="#research">Research</a>
@@ -16,24 +23,22 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="hero">
-          <p className="role">Researcher &amp; Engineer</p>
+        <section class="hero">
+          <p class="role">Researcher &amp; Engineer</p>
           <h1>
             I study how intelligent systems can make reliable decisions under
             uncertainty.
           </h1>
-          <p className="intro">
+          <p class="intro">
             My work focuses on trustworthy machine learning, forecasting, and
             real-world decision systems.
           </p>
-          <a className="text-link" href="#work">
-            View selected work <span aria-hidden="true">↓</span>
-          </a>
+          <a class="text-link" href="#work">View selected work <span>↓</span></a>
         </section>
 
-        <section className="section" id="about">
+        <section class="section" id="about">
           <h2>About</h2>
-          <div className="section-content prose">
+          <div class="section-content prose">
             <p>
               I&apos;m interested in the gap between a model that performs well
               in an experiment and a system that can be trusted in practice.
@@ -45,60 +50,51 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section" id="research">
+        <section class="section" id="research">
           <h2>Research</h2>
-          <div className="section-content topics">
-            <p>
-              <span>01</span>
-              Reliable machine learning
-            </p>
-            <p>
-              <span>02</span>
-              Uncertainty quantification
-            </p>
-            <p>
-              <span>03</span>
-              Intelligent decision systems
-            </p>
+          <div class="section-content topics">
+            <p><span>01</span>Reliable machine learning</p>
+            <p><span>02</span>Uncertainty quantification</p>
+            <p><span>03</span>Intelligent decision systems</p>
           </div>
         </section>
 
-        <section className="section" id="work">
+        <section class="section" id="work">
           <h2>Selected work</h2>
-          <div className="section-content work-list">
+          <div class="section-content work-list">
             <a href="#">
-              <span className="year">2026</span>
+              <span class="year">2026</span>
               <strong>Risk-aware learning for critical decisions</strong>
               <small>Research paper</small>
-              <Arrow />
+              <span>↗</span>
             </a>
             <a href="#">
-              <span className="year">2025</span>
+              <span class="year">2025</span>
               <strong>Forecasting uncertainty in dynamic systems</strong>
               <small>Applied research</small>
-              <Arrow />
+              <span>↗</span>
             </a>
             <a href="#">
-              <span className="year">2024</span>
+              <span class="year">2024</span>
               <strong>Tools for reproducible machine learning</strong>
               <small>Open source</small>
-              <Arrow />
+              <span>↗</span>
             </a>
           </div>
         </section>
 
-        <section className="section contact">
+        <section class="section contact">
           <h2>Contact</h2>
-          <div className="section-content">
+          <div class="section-content">
             <p>For research, collaboration, or a thoughtful conversation.</p>
-            <a className="text-link" href="mailto:hello@example.com">
-              hello@example.com <Arrow />
+            <a class="text-link" href="mailto:hello@example.com">
+              hello@example.com <span>↗</span>
             </a>
           </div>
         </section>
       </main>
 
-      <footer className="footer">
+      <footer class="footer">
         <span>© 2026 Your Name</span>
         <div>
           <a href="#">Google Scholar</a>
@@ -107,5 +103,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  );
-}
+  </body>
+</html>

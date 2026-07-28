@@ -1,12 +1,8 @@
-@import "tailwindcss";
-
 :root {
   --ink: #171717;
   --muted: #747474;
   --line: #dededb;
   --paper: #ffffff;
-  --sans: var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif;
-  --mono: var(--font-geist-mono), "SFMono-Regular", Consolas, monospace;
 }
 
 * {
@@ -20,7 +16,8 @@ html {
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--sans);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif;
   margin: 0;
   min-width: 320px;
 }
@@ -58,7 +55,6 @@ a {
 .header nav a {
   color: var(--muted);
   font-size: 12px;
-  transition: color 150ms ease;
 }
 
 .header nav a:hover {
@@ -130,7 +126,8 @@ a {
   margin: 0 0 20px;
 }
 
-.topics {
+.topics,
+.work-list {
   border-top: 1px solid var(--line);
 }
 
@@ -147,12 +144,8 @@ a {
 .topics span,
 .year {
   color: var(--muted);
-  font-family: var(--mono);
+  font-family: "SFMono-Regular", Consolas, monospace;
   font-size: 9px;
-}
-
-.work-list {
-  border-top: 1px solid var(--line);
 }
 
 .work-list a {
@@ -205,10 +198,6 @@ a {
     height: 78px;
   }
 
-  .header nav {
-    gap: 16px;
-  }
-
   .header nav a:not(:last-child) {
     display: none;
   }
@@ -243,15 +232,5 @@ a {
 
   .footer div {
     gap: 10px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  * {
-    transition: none !important;
   }
 }

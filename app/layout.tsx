@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "个人主页模板试衣间",
-  description: "三套为研究者与技术创作者设计的个人主页模板。",
+  title: "Your Name — Researcher & Engineer",
+  description:
+    "Personal homepage for a researcher working on reliable machine learning and intelligent systems.",
 };
 
 export default function RootLayout({
