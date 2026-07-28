@@ -107,33 +107,31 @@ function SignalTemplate() {
             </div>
           </div>
 
-          <div className="signal-radar" aria-label="当前研究方向">
-            <div className="radar-top">
-              <span>Current directions</span>
-              <span>2024 — 26</span>
+          <div className="signal-profile" aria-label="个人主页快速索引">
+            <p className="profile-label">Quick index / 2026</p>
+            <div>
+              <span>01</span>
+              <p>
+                Research
+                <small>Reliable learning &amp; uncertainty</small>
+              </p>
             </div>
-            <div className="radar-orbit">
-              <span className="orbit orbit-one" />
-              <span className="orbit orbit-two" />
-              <span className="orbit-core" />
-              <span className="orbit-label label-one">Reliable AI</span>
-              <span className="orbit-label label-two">Uncertainty</span>
-              <span className="orbit-label label-three">Systems</span>
+            <div>
+              <span>02</span>
+              <p>
+                Projects
+                <small>Selected applied work</small>
+              </p>
             </div>
-            <div className="radar-bottom">
-              <span>03 active threads</span>
-              <span>Open to collaboration</span>
+            <div>
+              <span>03</span>
+              <p>
+                Writing
+                <small>Notes on systems and AI</small>
+              </p>
             </div>
+            <a href="#signal-about">A short introduction <Arrow /></a>
           </div>
-        </section>
-
-        <section className="signal-ticker" aria-label="研究主题">
-          <span>RELIABLE MACHINE LEARNING</span>
-          <i>✦</i>
-          <span>DECISION SYSTEMS</span>
-          <i>✦</i>
-          <span>HUMAN-CENTERED RESEARCH</span>
-          <i>✦</i>
         </section>
 
         <section className="signal-work" id="signal-work">
