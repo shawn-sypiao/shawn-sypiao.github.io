@@ -2,434 +2,345 @@
 
 import { useState } from "react";
 
-type TemplateId = "signal" | "notes" | "orbit";
+type TemplateId = "plain" | "split" | "index";
 
-const templates: Array<{
+const choices: Array<{
   id: TemplateId;
-  code: string;
+  number: string;
   name: string;
-  description: string;
+  note: string;
 }> = [
-  {
-    id: "signal",
-    code: "01",
-    name: "Signal",
-    description: "清晰、理性、研究型",
-  },
-  {
-    id: "notes",
-    code: "02",
-    name: "Field Notes",
-    description: "温暖、编辑感、个人化",
-  },
-  {
-    id: "orbit",
-    code: "03",
-    name: "Orbit",
-    description: "深色、技术感、有冲击力",
-  },
+  { id: "plain", number: "01", name: "Plain", note: "纯文字单栏" },
+  { id: "split", number: "02", name: "Split", note: "简洁左右分栏" },
+  { id: "index", number: "03", name: "Index", note: "学术索引风格" },
 ];
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
-function TemplateSwitcher({
+function TemplateBar({
   active,
-  onChange,
+  setActive,
 }: {
   active: TemplateId;
-  onChange: (id: TemplateId) => void;
+  setActive: (template: TemplateId) => void;
 }) {
   return (
-    <aside className="template-switcher" aria-label="主页模板选择器">
-      <div className="switcher-title">
-        <span className="switcher-dot" />
-        <span>主页模板</span>
-      </div>
-      <div className="switcher-options">
-        {templates.map((template) => (
+    <aside className="template-bar" aria-label="极简主页模板选择">
+      <p>选择模板</p>
+      <div>
+        {choices.map((choice) => (
           <button
-            className={active === template.id ? "is-active" : ""}
-            key={template.id}
-            onClick={() => onChange(template.id)}
+            className={active === choice.id ? "active" : ""}
+            key={choice.id}
+            onClick={() => setActive(choice.id)}
             type="button"
-            aria-pressed={active === template.id}
+            aria-pressed={active === choice.id}
           >
-            <span className="switcher-code">{template.code}</span>
-            <span>
-              <strong>{template.name}</strong>
-              <small>{template.description}</small>
-            </span>
+            <span>{choice.number}</span>
+            <strong>{choice.name}</strong>
+            <small>{choice.note}</small>
           </button>
         ))}
       </div>
-      <span className="switcher-hint">点击切换</span>
+      <p className="bar-note">最终页面不会保留此栏</p>
     </aside>
   );
 }
 
-function SignalTemplate() {
+function PlainTemplate() {
   return (
-    <div className="signal-site">
-      <header className="signal-nav">
-        <a className="signal-mark" href="#signal-top" aria-label="返回首页">
-          YN<span>°</span>
+    <div className="plain-page">
+      <header>
+        <a className="plain-name" href="#plain-top">
+          Your Name
         </a>
-        <nav aria-label="Signal 模板导航">
-          <a href="#signal-work">Work</a>
-          <a href="#signal-about">About</a>
-          <a href="#signal-notes">Notes</a>
+        <nav aria-label="Plain 模板导航">
+          <a href="#plain-about">About</a>
+          <a href="#plain-work">Work</a>
+          <a href="#plain-contact">Contact</a>
         </nav>
-        <a className="signal-contact" href="mailto:hello@example.com">
-          Let&apos;s talk <Arrow />
-        </a>
       </header>
 
-      <main id="signal-top">
-        <section className="signal-hero">
-          <div className="signal-intro">
-            <p className="eyebrow">
-              <span />
-              Researcher &amp; builder
-            </p>
-            <h1>
-              Making complex
-              <br />
-              systems <em>legible.</em>
-            </h1>
-            <div className="signal-summary">
-              <p>
-                I study intelligent systems under uncertainty — and build tools
-                that make their decisions safer, clearer, and more useful.
-              </p>
-              <a href="#signal-work">
-                Explore selected work <Arrow />
-              </a>
-            </div>
-          </div>
-
-          <div className="signal-profile" aria-label="个人主页快速索引">
-            <p className="profile-label">Quick index / 2026</p>
-            <div>
-              <span>01</span>
-              <p>
-                Research
-                <small>Reliable learning &amp; uncertainty</small>
-              </p>
-            </div>
-            <div>
-              <span>02</span>
-              <p>
-                Projects
-                <small>Selected applied work</small>
-              </p>
-            </div>
-            <div>
-              <span>03</span>
-              <p>
-                Writing
-                <small>Notes on systems and AI</small>
-              </p>
-            </div>
-            <a href="#signal-about">A short introduction <Arrow /></a>
+      <main id="plain-top">
+        <section className="plain-hero">
+          <p className="plain-role">Researcher &amp; Engineer</p>
+          <h1>
+            I work on reliable machine learning and intelligent systems.
+          </h1>
+          <p className="plain-intro">
+            My research focuses on uncertainty, decision-making, and building
+            machine learning systems that work beyond controlled settings.
+          </p>
+          <div className="plain-links">
+            <a href="mailto:hello@example.com">
+              Email <Arrow />
+            </a>
+            <a href="#plain-work">Selected work ↓</a>
           </div>
         </section>
 
-        <section className="signal-work" id="signal-work">
-          <div className="section-heading">
-            <div>
-              <span>01 / Selected work</span>
-              <h2>Ideas, tested in<br />the real world.</h2>
-            </div>
+        <section className="plain-section plain-about" id="plain-about">
+          <h2>About</h2>
+          <div>
             <p>
-              A selection of research and applied projects across trustworthy
-              AI, forecasting, and intelligent infrastructure.
+              I&apos;m interested in the gap between a model that performs well
+              in an experiment and a system that can be trusted in practice.
             </p>
-          </div>
-          <div className="signal-projects">
-            <article>
-              <div className="project-number">01</div>
-              <div>
-                <p>RESEARCH · 2026</p>
-                <h3>Risk-aware learning<br />for critical decisions</h3>
-              </div>
-              <Arrow />
-            </article>
-            <article>
-              <div className="project-number">02</div>
-              <div>
-                <p>APPLIED AI · 2025</p>
-                <h3>Forecasting uncertainty<br />in dynamic systems</h3>
-              </div>
-              <Arrow />
-            </article>
-            <article>
-              <div className="project-number">03</div>
-              <div>
-                <p>OPEN SOURCE · 2025</p>
-                <h3>Tools for reproducible<br />machine learning</h3>
-              </div>
-              <Arrow />
-            </article>
+            <p>
+              I enjoy working across disciplines, writing clearly, and turning
+              research questions into useful tools.
+            </p>
           </div>
         </section>
 
-        <footer className="signal-footer" id="signal-about">
-          <p>Good questions deserve rigorous answers.</p>
-          <a href="mailto:hello@example.com">hello@example.com <Arrow /></a>
+        <section className="plain-section" id="plain-work">
+          <h2>Selected work</h2>
+          <div className="plain-work-list">
+            <a href="#">
+              <span>2026</span>
+              <strong>Risk-aware learning for critical decisions</strong>
+              <small>Research paper</small>
+              <Arrow />
+            </a>
+            <a href="#">
+              <span>2025</span>
+              <strong>Forecasting uncertainty in dynamic systems</strong>
+              <small>Applied research</small>
+              <Arrow />
+            </a>
+            <a href="#">
+              <span>2024</span>
+              <strong>Tools for reproducible machine learning</strong>
+              <small>Open source</small>
+              <Arrow />
+            </a>
+          </div>
+        </section>
+
+        <section className="plain-section plain-contact" id="plain-contact">
+          <h2>Contact</h2>
+          <div>
+            <p>For research, collaboration, or a thoughtful conversation:</p>
+            <a href="mailto:hello@example.com">hello@example.com <Arrow /></a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>© 2026 Your Name</span>
+        <div>
+          <a href="#">Google Scholar</a>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+function SplitTemplate() {
+  return (
+    <div className="split-page">
+      <aside className="split-profile">
+        <div>
+          <a className="split-name" href="#split-top">
+            Your Name
+          </a>
+          <p>Researcher working on reliable AI, uncertainty, and intelligent systems.</p>
+        </div>
+        <nav aria-label="Split 模板导航">
+          <a href="#split-about">About</a>
+          <a href="#split-work">Work</a>
+          <a href="#split-writing">Writing</a>
+        </nav>
+        <div className="split-social">
+          <a href="mailto:hello@example.com">Email <Arrow /></a>
+          <a href="#">Scholar</a>
+          <a href="#">GitHub</a>
+        </div>
+      </aside>
+
+      <main id="split-top">
+        <section className="split-lead">
+          <p>Currently</p>
+          <h1>
+            Exploring how learning systems can make better decisions when the
+            world is uncertain.
+          </h1>
+          <small>Based in Hong Kong · Open to collaboration</small>
+        </section>
+
+        <section className="split-section" id="split-about">
+          <h2>About</h2>
+          <div>
+            <p>
+              My work sits between machine learning research and real-world
+              systems. I care about methods that are rigorous, understandable,
+              and useful outside the lab.
+            </p>
+          </div>
+        </section>
+
+        <section className="split-section" id="split-work">
+          <h2>Selected work</h2>
+          <div className="split-list">
+            <a href="#">
+              <span>01</span>
+              <div>
+                <strong>Reliable decisions under uncertainty</strong>
+                <small>Trustworthy machine learning · 2026</small>
+              </div>
+              <Arrow />
+            </a>
+            <a href="#">
+              <span>02</span>
+              <div>
+                <strong>Probabilistic forecasting at scale</strong>
+                <small>Forecasting systems · 2025</small>
+              </div>
+              <Arrow />
+            </a>
+            <a href="#">
+              <span>03</span>
+              <div>
+                <strong>Learning systems for infrastructure</strong>
+                <small>Applied AI · 2024</small>
+              </div>
+              <Arrow />
+            </a>
+          </div>
+        </section>
+
+        <section className="split-section" id="split-writing">
+          <h2>Recent writing</h2>
+          <div className="split-writing">
+            <a href="#">
+              <span>Jul 2026</span>
+              <strong>What does it mean for a model to know its limits?</strong>
+            </a>
+            <a href="#">
+              <span>May 2026</span>
+              <strong>Notes on research that survives deployment</strong>
+            </a>
+          </div>
+        </section>
+
+        <footer>
+          <span>© 2026</span>
+          <span>Last updated July 2026</span>
         </footer>
       </main>
     </div>
   );
 }
 
-function NotesTemplate() {
+function IndexTemplate() {
   return (
-    <div className="notes-site">
-      <header className="notes-nav">
-        <a href="#notes-top" className="notes-name">
-          Your Name
-          <span>Research notes &amp; selected work</span>
-        </a>
-        <nav aria-label="Field Notes 模板导航">
-          <a href="#notes-work">Index</a>
-          <a href="#notes-about">About</a>
-          <a href="mailto:hello@example.com">Email <Arrow /></a>
+    <div className="index-page">
+      <header id="index-top">
+        <div>
+          <a href="#index-top">Your Name</a>
+          <span>Ph.D. · Researcher · Engineer</span>
+        </div>
+        <nav aria-label="Index 模板导航">
+          <a href="#index-bio">Bio</a>
+          <a href="#index-publications">Publications</a>
+          <a href="#index-projects">Projects</a>
+          <a href="mailto:hello@example.com">Email</a>
         </nav>
       </header>
 
-      <main id="notes-top">
-        <section className="notes-hero">
-          <p className="notes-kicker">FIELD NOTE № 27 · UPDATED JULY 2026</p>
-          <h1>
-            A notebook for ideas
-            <br />
-            that survive the <span>lab.</span>
-          </h1>
-          <div className="notes-hero-bottom">
-            <p className="notes-lead">
-              I&apos;m a researcher working where machine learning meets
-              uncertainty, infrastructure, and the stubborn complexity of the
-              physical world.
-            </p>
-            <div className="notes-stamp">
-              <span>Currently</span>
-              <strong>Thinking in<br />systems</strong>
-              <small>○ AVAILABLE FOR GOOD CONVERSATIONS</small>
-            </div>
-          </div>
-          <div className="pencil-note" aria-hidden="true">
-            Questions first,
-            <br />
-            models second.
-          </div>
-        </section>
-
-        <section className="notes-index" id="notes-work">
-          <div className="notes-index-heading">
-            <span>Selected entries</span>
-            <span>2019 — 2026</span>
-          </div>
-          <article>
-            <span className="entry-id">01</span>
-            <div>
-              <p>TRUSTWORTHY AI / RESEARCH</p>
-              <h2>How much should<br />we trust a prediction?</h2>
-            </div>
-            <div className="entry-meta">
-              <span>Paper</span>
-              <span>Ongoing</span>
-            </div>
-            <Arrow />
-          </article>
-          <article>
-            <span className="entry-id">02</span>
-            <div>
-              <p>ENERGY / FORECASTING</p>
-              <h2>Reading tomorrow<br />from imperfect weather</h2>
-            </div>
-            <div className="entry-meta">
-              <span>Project</span>
-              <span>2025</span>
-            </div>
-            <Arrow />
-          </article>
-          <article>
-            <span className="entry-id">03</span>
-            <div>
-              <p>TOOLS / OPEN SOURCE</p>
-              <h2>A small toolkit for<br />reproducible experiments</h2>
-            </div>
-            <div className="entry-meta">
-              <span>Code</span>
-              <span>2024</span>
-            </div>
-            <Arrow />
-          </article>
-        </section>
-
-        <section className="notes-about" id="notes-about">
-          <p className="notes-section-label">A short field note about me</p>
-          <blockquote>
-            “The most useful research doesn&apos;t just improve a number.
-            It changes how we see the problem.”
-          </blockquote>
+      <main>
+        <section className="index-intro" id="index-bio">
+          <p className="index-label">Bio</p>
           <div>
-            <p>
-              My work combines statistical learning, systems thinking, and
-              careful experiments. I enjoy collaborations that cross
-              disciplines and produce things people can actually use.
-            </p>
-            <a href="mailto:hello@example.com">Start a conversation <Arrow /></a>
-          </div>
-        </section>
-      </main>
-
-      <footer className="notes-footer">
-        <span>Made with questions, coffee, and version control.</span>
-        <span>© 2026 YOUR NAME</span>
-      </footer>
-    </div>
-  );
-}
-
-function OrbitTemplate() {
-  return (
-    <div className="orbit-site">
-      <header className="orbit-nav">
-        <a className="orbit-logo" href="#orbit-top">
-          <span>Y/N</span>
-          <small>RESEARCH<br />SYSTEMS</small>
-        </a>
-        <nav aria-label="Orbit 模板导航">
-          <a href="#orbit-work">[ WORK ]</a>
-          <a href="#orbit-about">[ PROFILE ]</a>
-          <a href="mailto:hello@example.com">[ CONTACT ↗ ]</a>
-        </nav>
-        <span className="orbit-clock">HKG / 22:48:09</span>
-      </header>
-
-      <main id="orbit-top">
-        <section className="orbit-hero">
-          <div className="orbit-grid-labels" aria-hidden="true">
-            <span>36.2048° N</span>
-            <span>127.6792° E</span>
-            <span>SYS.01</span>
-          </div>
-          <div className="orbit-title">
-            <p>
-              <span className="status-light" />
-              INDEPENDENT RESEARCHER / ENGINEER
-            </p>
             <h1>
-              Designing
-              <br />
-              intelligence
-              <br />
-              for the <em>real world.</em>
+              I study trustworthy machine learning and decision systems under
+              uncertainty.
             </h1>
-          </div>
-          <aside className="orbit-console">
-            <div className="console-head">
-              <span>STATUS.LOG</span>
-              <span>LIVE</span>
-            </div>
-            <div className="console-graphic" aria-hidden="true">
-              <span className="console-ring ring-a" />
-              <span className="console-ring ring-b" />
-              <span className="console-cross horizontal" />
-              <span className="console-cross vertical" />
-              <span className="console-point" />
-              <span className="console-reading">0.98</span>
-            </div>
-            <dl>
-              <div><dt>FOCUS</dt><dd>RELIABLE AI</dd></div>
-              <div><dt>MODE</dt><dd>EXPLORATION</dd></div>
-              <div><dt>COLLAB</dt><dd>OPEN <span>●</span></dd></div>
-            </dl>
-          </aside>
-          <div className="orbit-scroll">
-            <span>SCROLL TO EXPLORE</span>
-            <span>↓</span>
-          </div>
-        </section>
-
-        <section className="orbit-manifesto" id="orbit-about">
-          <p>MISSION / 001</p>
-          <h2>
-            Machines that know
-            <br />
-            <span>what they don&apos;t know.</span>
-          </h2>
-          <div className="manifesto-copy">
             <p>
-              I build learning systems that operate under uncertainty. The goal:
-              decisions that are not only accurate, but calibrated, transparent,
-              and ready for high-stakes environments.
+              My goal is to build methods that remain reliable when data,
+              environments, and human needs change.
             </p>
-            <a href="mailto:hello@example.com">INITIATE CONTACT <Arrow /></a>
+            <p className="index-links">
+              <a href="#">CV</a>
+              <a href="#">Google Scholar</a>
+              <a href="#">GitHub</a>
+            </p>
           </div>
         </section>
 
-        <section className="orbit-work" id="orbit-work">
-          <div className="orbit-section-head">
-            <span>SELECTED OPERATIONS</span>
-            <span>03 / ACTIVE ARCHIVE</span>
+        <section className="index-section" id="index-publications">
+          <p className="index-label">Selected publications</p>
+          <div className="index-rows">
+            <article>
+              <span>2026</span>
+              <div>
+                <h2>Risk Control for Learning Systems Under Shift</h2>
+                <p>Your Name, Coauthor Name · Journal / Conference</p>
+              </div>
+              <a href="#">Paper</a>
+            </article>
+            <article>
+              <span>2025</span>
+              <div>
+                <h2>Calibrated Forecasting for Dynamic Environments</h2>
+                <p>Your Name, Coauthor Name · Journal / Conference</p>
+              </div>
+              <a href="#">Paper</a>
+            </article>
+            <article>
+              <span>2024</span>
+              <div>
+                <h2>Uncertainty-Aware Decisions in Complex Systems</h2>
+                <p>Your Name, Coauthor Name · Journal / Conference</p>
+              </div>
+              <a href="#">Paper</a>
+            </article>
           </div>
-          <article>
-            <span>OP.01</span>
-            <div>
-              <p>RISK CONTROL</p>
-              <h3>Reliable decisions under distribution shift</h3>
-            </div>
-            <div className="orbit-tags">
-              <span>RESEARCH</span><span>ML</span><span>2026</span>
-            </div>
-            <Arrow />
-          </article>
-          <article>
-            <span>OP.02</span>
-            <div>
-              <p>EARTH SYSTEMS</p>
-              <h3>Probabilistic forecasting at scale</h3>
-            </div>
-            <div className="orbit-tags">
-              <span>FORECASTING</span><span>AI</span><span>2025</span>
-            </div>
-            <Arrow />
-          </article>
-          <article>
-            <span>OP.03</span>
-            <div>
-              <p>INTELLIGENT INFRASTRUCTURE</p>
-              <h3>Systems that adapt without losing control</h3>
-            </div>
-            <div className="orbit-tags">
-              <span>SYSTEMS</span><span>UQ</span><span>2024</span>
-            </div>
-            <Arrow />
-          </article>
+        </section>
+
+        <section className="index-section" id="index-projects">
+          <p className="index-label">Projects</p>
+          <div className="index-rows">
+            <article>
+              <span>01</span>
+              <div>
+                <h2>Reliable ML Toolkit</h2>
+                <p>Open-source tools for evaluation and reproducible research.</p>
+              </div>
+              <a href="#">View</a>
+            </article>
+            <article>
+              <span>02</span>
+              <div>
+                <h2>Probabilistic Forecasting</h2>
+                <p>Learning uncertainty in real-world forecasting systems.</p>
+              </div>
+              <a href="#">View</a>
+            </article>
+          </div>
         </section>
       </main>
 
-      <footer className="orbit-footer">
-        <span>© 2026 YOUR NAME</span>
-        <span>ALL SYSTEMS NOMINAL</span>
-        <span>GITHUB / SCHOLAR / LINKEDIN</span>
+      <footer>
+        <span>Your Name · hello@example.com</span>
+        <span>Hong Kong · 2026</span>
       </footer>
     </div>
   );
 }
 
 export default function Home() {
-  const [template, setTemplate] = useState<TemplateId>("signal");
+  const [active, setActive] = useState<TemplateId>("plain");
 
   return (
     <>
-      <TemplateSwitcher active={template} onChange={setTemplate} />
-      <div className={`template-stage template-${template}`}>
-        {template === "signal" && <SignalTemplate />}
-        {template === "notes" && <NotesTemplate />}
-        {template === "orbit" && <OrbitTemplate />}
+      <TemplateBar active={active} setActive={setActive} />
+      <div className={`template-preview preview-${active}`}>
+        {active === "plain" && <PlainTemplate />}
+        {active === "split" && <SplitTemplate />}
+        {active === "index" && <IndexTemplate />}
       </div>
     </>
   );
