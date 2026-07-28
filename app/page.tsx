@@ -8,91 +8,54 @@ export default function Home() {
           Your Name
         </a>
         <nav aria-label="Primary navigation">
-          <a href="#about">About</a>
-          <a href="#research">Research</a>
           <a href="#work">Work</a>
+          <a href="#">Scholar</a>
           <a href="mailto:hello@example.com">Email</a>
         </nav>
       </header>
 
       <main id="top">
         <section className="hero">
-          <p className="role">Researcher &amp; Engineer</p>
-          <h1>
-            I study how intelligent systems can make reliable decisions under
-            uncertainty.
-          </h1>
-          <p className="intro">
-            My work focuses on trustworthy machine learning, forecasting, and
-            real-world decision systems.
-          </p>
-          <a className="text-link" href="#work">
-            View selected work <span aria-hidden="true">↓</span>
-          </a>
-        </section>
+          <div className="hero-copy">
+            <p className="role">Researcher &amp; Engineer</p>
+            <h1>
+              I work on reliable machine learning and intelligent systems.
+            </h1>
+            <p className="intro">
+              My research explores uncertainty, forecasting, and how learning
+              systems can make better decisions in the real world.
+            </p>
+            <div className="hero-links">
+              <a href="mailto:hello@example.com">
+                Email <Arrow />
+              </a>
+              <a href="#">Download CV</a>
+            </div>
+          </div>
 
-        <section className="section" id="about">
-          <h2>About</h2>
-          <div className="section-content prose">
-            <p>
-              I&apos;m interested in the gap between a model that performs well
-              in an experiment and a system that can be trusted in practice.
-            </p>
-            <p>
-              I enjoy careful research, clear writing, and collaborations that
-              turn difficult questions into useful tools.
-            </p>
+          <div className="portrait" aria-label="Portrait photo placeholder">
+            <span>Photo</span>
+            <small>4:5</small>
           </div>
         </section>
 
-        <section className="section" id="research">
-          <h2>Research</h2>
-          <div className="section-content topics">
-            <p>
-              <span>01</span>
-              Reliable machine learning
-            </p>
-            <p>
-              <span>02</span>
-              Uncertainty quantification
-            </p>
-            <p>
-              <span>03</span>
-              Intelligent decision systems
-            </p>
-          </div>
-        </section>
-
-        <section className="section" id="work">
+        <section className="work" id="work">
           <h2>Selected work</h2>
-          <div className="section-content work-list">
+          <div className="work-list">
             <a href="#">
               <span className="year">2026</span>
               <strong>Risk-aware learning for critical decisions</strong>
-              <small>Research paper</small>
               <Arrow />
             </a>
             <a href="#">
               <span className="year">2025</span>
               <strong>Forecasting uncertainty in dynamic systems</strong>
-              <small>Applied research</small>
               <Arrow />
             </a>
             <a href="#">
               <span className="year">2024</span>
               <strong>Tools for reproducible machine learning</strong>
-              <small>Open source</small>
               <Arrow />
-            </a>
-          </div>
-        </section>
-
-        <section className="section contact">
-          <h2>Contact</h2>
-          <div className="section-content">
-            <p>For research, collaboration, or a thoughtful conversation.</p>
-            <a className="text-link" href="mailto:hello@example.com">
-              hello@example.com <Arrow />
             </a>
           </div>
         </section>
@@ -101,9 +64,9 @@ export default function Home() {
       <footer className="footer">
         <span>© 2026 Your Name</span>
         <div>
-          <a href="#">Google Scholar</a>
           <a href="#">GitHub</a>
           <a href="#">LinkedIn</a>
+          <a href="mailto:hello@example.com">Email</a>
         </div>
       </footer>
     </div>
