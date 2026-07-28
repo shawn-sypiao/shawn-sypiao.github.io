@@ -15,9 +15,11 @@ export default function Home() {
 
       <main id="top">
         <section className="profile" id="about">
-          <div className="portrait" aria-label="Portrait photo placeholder">
-            <span>Portrait</span>
-            <small>Replace with your photo</small>
+          <div className="portrait-frame">
+            <div className="portrait" aria-label="Portrait photo placeholder">
+              <span>Portrait</span>
+              <small>Replace with your photo</small>
+            </div>
           </div>
 
           <div className="profile-copy">
