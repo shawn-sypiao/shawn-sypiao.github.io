@@ -7,7 +7,8 @@ export default function Home() {
         </a>
         <nav aria-label="Primary navigation">
           <a href="#about">About</a>
-          <a href="#">CV</a>
+          <a href="#cv">CV</a>
+          <a href="#news">News</a>
           <a href="mailto:hello@example.com">Email</a>
         </nav>
       </header>
@@ -40,6 +41,60 @@ export default function Home() {
               <a href="#">GitHub</a>
               <a href="#">LinkedIn</a>
             </div>
+          </div>
+        </section>
+
+        <section className="section" id="cv">
+          <h2>CV</h2>
+          <div className="cv-grid">
+            <div>
+              <h3>Experience</h3>
+              <article className="cv-item">
+                <time>2024 — Present</time>
+                <div>
+                  <strong>Researcher / Position Title</strong>
+                  <p>University or Institution</p>
+                </div>
+              </article>
+              <article className="cv-item">
+                <time>2020 — 2024</time>
+                <div>
+                  <strong>Ph.D. in Your Field</strong>
+                  <p>University Name</p>
+                </div>
+              </article>
+            </div>
+            <div>
+              <h3>Awards</h3>
+              <article className="cv-item">
+                <time>2025</time>
+                <div>
+                  <strong>Award or Fellowship Name</strong>
+                  <p>Awarding organization</p>
+                </div>
+              </article>
+              <article className="cv-item">
+                <time>2023</time>
+                <div>
+                  <strong>Scholarship or Honor</strong>
+                  <p>Awarding organization</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section news" id="news">
+          <h2>News</h2>
+          <div className="news-list">
+            <p>
+              <time>Jul 2026</time>
+              <span>Add a recent update, talk, project, or announcement here.</span>
+            </p>
+            <p>
+              <time>May 2026</time>
+              <span>Add another short update here.</span>
+            </p>
           </div>
         </section>
       </main>
