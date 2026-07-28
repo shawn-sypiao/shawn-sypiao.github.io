@@ -1,73 +1,114 @@
-const Arrow = () => <span aria-hidden="true">↗</span>;
-
 export default function Home() {
   return (
     <div className="site">
       <header className="header">
-        <a className="name" href="#top">
+        <a className="site-name" href="#top">
           Your Name
         </a>
         <nav aria-label="Primary navigation">
-          <a href="#work">Work</a>
-          <a href="#">Scholar</a>
-          <a href="mailto:hello@example.com">Email</a>
+          <a href="#about">About</a>
+          <a href="#news">News</a>
+          <a href="#publications">Publications</a>
+          <a href="#">CV</a>
         </nav>
       </header>
 
       <main id="top">
-        <section className="hero">
-          <div className="hero-copy">
-            <p className="role">Researcher &amp; Engineer</p>
-            <h1>
-              I work on reliable machine learning and intelligent systems.
-            </h1>
-            <p className="intro">
-              My research explores uncertainty, forecasting, and how learning
-              systems can make better decisions in the real world.
-            </p>
-            <div className="hero-links">
-              <a href="mailto:hello@example.com">
-                Email <Arrow />
-              </a>
-              <a href="#">Download CV</a>
-            </div>
+        <section className="profile" id="about">
+          <div className="portrait" aria-label="Portrait photo placeholder">
+            <span>Portrait</span>
+            <small>Replace with your photo</small>
           </div>
 
-          <div className="portrait" aria-label="Portrait photo placeholder">
-            <span>Photo</span>
-            <small>4:5</small>
+          <div className="profile-copy">
+            <h1>Your Name</h1>
+            <p className="position">Researcher &amp; Engineer</p>
+            <p className="affiliation">Department / University or Institution</p>
+            <p className="bio">
+              I work on reliable machine learning and intelligent systems. My
+              research focuses on uncertainty, forecasting, and decision-making
+              in real-world environments.
+            </p>
+            <p className="interests">
+              <strong>Research interests:</strong> Trustworthy ML · Uncertainty
+              Quantification · Decision Systems
+            </p>
+            <div className="profile-links">
+              <a href="mailto:hello@example.com">Email</a>
+              <a href="#">Google Scholar</a>
+              <a href="#">GitHub</a>
+              <a href="#">LinkedIn</a>
+            </div>
           </div>
         </section>
 
-        <section className="work" id="work">
-          <h2>Selected work</h2>
-          <div className="work-list">
-            <a href="#">
+        <section className="section" id="news">
+          <h2>News</h2>
+          <div className="news-list">
+            <p>
+              <time>Jul 2026</time>
+              <span>A new paper on reliable decision systems is available.</span>
+            </p>
+            <p>
+              <time>May 2026</time>
+              <span>Presented our recent work at Conference Name.</span>
+            </p>
+            <p>
+              <time>Jan 2026</time>
+              <span>Started a new project on uncertainty-aware forecasting.</span>
+            </p>
+          </div>
+        </section>
+
+        <section className="section" id="publications">
+          <div className="section-title">
+            <h2>Selected publications</h2>
+            <a href="#">View all</a>
+          </div>
+          <div className="publication-list">
+            <article>
               <span className="year">2026</span>
-              <strong>Risk-aware learning for critical decisions</strong>
-              <Arrow />
-            </a>
-            <a href="#">
+              <div>
+                <h3>Risk-Aware Learning for Critical Decisions</h3>
+                <p>Your Name, Coauthor Name</p>
+                <p className="venue">Journal or Conference Name, 2026</p>
+                <div className="paper-links">
+                  <a href="#">Paper</a>
+                  <a href="#">Code</a>
+                </div>
+              </div>
+            </article>
+            <article>
               <span className="year">2025</span>
-              <strong>Forecasting uncertainty in dynamic systems</strong>
-              <Arrow />
-            </a>
-            <a href="#">
+              <div>
+                <h3>Forecasting Uncertainty in Dynamic Systems</h3>
+                <p>Your Name, Coauthor Name</p>
+                <p className="venue">Journal or Conference Name, 2025</p>
+                <div className="paper-links">
+                  <a href="#">Paper</a>
+                  <a href="#">Code</a>
+                </div>
+              </div>
+            </article>
+            <article>
               <span className="year">2024</span>
-              <strong>Tools for reproducible machine learning</strong>
-              <Arrow />
-            </a>
+              <div>
+                <h3>Reproducible Evaluation for Machine Learning</h3>
+                <p>Your Name, Coauthor Name</p>
+                <p className="venue">Journal or Conference Name, 2024</p>
+                <div className="paper-links">
+                  <a href="#">Paper</a>
+                  <a href="#">Code</a>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
       </main>
 
       <footer className="footer">
         <span>© 2026 Your Name</span>
-        <div>
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-          <a href="mailto:hello@example.com">Email</a>
-        </div>
+        <span>Last updated July 2026</span>
       </footer>
     </div>
   );

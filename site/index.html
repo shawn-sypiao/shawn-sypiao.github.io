@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Personal homepage for a researcher working on reliable machine learning and intelligent systems."
+      content="Personal academic homepage for a researcher working on reliable machine learning and intelligent systems."
     />
     <title>Your Name — Researcher &amp; Engineer</title>
     <link rel="stylesheet" href="./styles.css" />
@@ -13,66 +13,111 @@
   <body>
     <div class="site">
       <header class="header">
-        <a class="name" href="#top">Your Name</a>
+        <a class="site-name" href="#top">Your Name</a>
         <nav aria-label="Primary navigation">
-          <a href="#work">Work</a>
-          <a href="#">Scholar</a>
-          <a href="mailto:hello@example.com">Email</a>
+          <a href="#about">About</a>
+          <a href="#news">News</a>
+          <a href="#publications">Publications</a>
+          <a href="#">CV</a>
         </nav>
       </header>
 
       <main id="top">
-        <section class="hero">
-          <div class="hero-copy">
-            <p class="role">Researcher &amp; Engineer</p>
-            <h1>
-              I work on reliable machine learning and intelligent systems.
-            </h1>
-            <p class="intro">
-              My research explores uncertainty, forecasting, and how learning
-              systems can make better decisions in the real world.
-            </p>
-            <div class="hero-links">
-              <a href="mailto:hello@example.com">Email <span>↗</span></a>
-              <a href="#">Download CV</a>
-            </div>
+        <section class="profile" id="about">
+          <div class="portrait" aria-label="Portrait photo placeholder">
+            <span>Portrait</span>
+            <small>Replace with your photo</small>
           </div>
 
-          <div class="portrait" aria-label="Portrait photo placeholder">
-            <span>Photo</span>
-            <small>4:5</small>
+          <div class="profile-copy">
+            <h1>Your Name</h1>
+            <p class="position">Researcher &amp; Engineer</p>
+            <p class="affiliation">Department / University or Institution</p>
+            <p class="bio">
+              I work on reliable machine learning and intelligent systems. My
+              research focuses on uncertainty, forecasting, and decision-making
+              in real-world environments.
+            </p>
+            <p class="interests">
+              <strong>Research interests:</strong> Trustworthy ML · Uncertainty
+              Quantification · Decision Systems
+            </p>
+            <div class="profile-links">
+              <a href="mailto:hello@example.com">Email</a>
+              <a href="#">Google Scholar</a>
+              <a href="#">GitHub</a>
+              <a href="#">LinkedIn</a>
+            </div>
           </div>
         </section>
 
-        <section class="work" id="work">
-          <h2>Selected work</h2>
-          <div class="work-list">
-            <a href="#">
+        <section class="section" id="news">
+          <h2>News</h2>
+          <div class="news-list">
+            <p>
+              <time>Jul 2026</time>
+              <span>A new paper on reliable decision systems is available.</span>
+            </p>
+            <p>
+              <time>May 2026</time>
+              <span>Presented our recent work at Conference Name.</span>
+            </p>
+            <p>
+              <time>Jan 2026</time>
+              <span>Started a new project on uncertainty-aware forecasting.</span>
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="publications">
+          <div class="section-title">
+            <h2>Selected publications</h2>
+            <a href="#">View all</a>
+          </div>
+          <div class="publication-list">
+            <article>
               <span class="year">2026</span>
-              <strong>Risk-aware learning for critical decisions</strong>
-              <span>↗</span>
-            </a>
-            <a href="#">
+              <div>
+                <h3>Risk-Aware Learning for Critical Decisions</h3>
+                <p>Your Name, Coauthor Name</p>
+                <p class="venue">Journal or Conference Name, 2026</p>
+                <div class="paper-links">
+                  <a href="#">Paper</a>
+                  <a href="#">Code</a>
+                </div>
+              </div>
+            </article>
+            <article>
               <span class="year">2025</span>
-              <strong>Forecasting uncertainty in dynamic systems</strong>
-              <span>↗</span>
-            </a>
-            <a href="#">
+              <div>
+                <h3>Forecasting Uncertainty in Dynamic Systems</h3>
+                <p>Your Name, Coauthor Name</p>
+                <p class="venue">Journal or Conference Name, 2025</p>
+                <div class="paper-links">
+                  <a href="#">Paper</a>
+                  <a href="#">Code</a>
+                </div>
+              </div>
+            </article>
+            <article>
               <span class="year">2024</span>
-              <strong>Tools for reproducible machine learning</strong>
-              <span>↗</span>
-            </a>
+              <div>
+                <h3>Reproducible Evaluation for Machine Learning</h3>
+                <p>Your Name, Coauthor Name</p>
+                <p class="venue">Journal or Conference Name, 2024</p>
+                <div class="paper-links">
+                  <a href="#">Paper</a>
+                  <a href="#">Code</a>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
       </main>
 
       <footer class="footer">
         <span>© 2026 Your Name</span>
-        <div>
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-          <a href="mailto:hello@example.com">Email</a>
-        </div>
+        <span>Last updated July 2026</span>
       </footer>
     </div>
   </body>
