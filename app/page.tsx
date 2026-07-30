@@ -26,9 +26,6 @@ export default function Home() {
           <a href="#education">Education</a>
           <a href="#awards">Awards</a>
           <a href="#life">Life</a>
-          <a href="/cv.pdf" target="_blank" rel="noreferrer">
-            CV
-          </a>
         </nav>
       </header>
 
@@ -61,9 +58,6 @@ export default function Home() {
                 rel="noreferrer"
               >
                 LinkedIn
-              </a>
-              <a href="/cv.pdf" target="_blank" rel="noreferrer">
-                Download CV
               </a>
             </div>
           </div>
@@ -346,9 +340,6 @@ export default function Home() {
             rel="noreferrer"
           >
             GitHub
-          </a>
-          <a href="/cv.pdf" target="_blank" rel="noreferrer">
-            CV
           </a>
         </div>
       </footer>
