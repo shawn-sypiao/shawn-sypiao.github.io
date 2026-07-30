@@ -1,92 +1,281 @@
+const awards = [
+  ["2025", "Best Student Paper Award Finalist, IEEE CASE"],
+  ["2025", "Hong Kong Postgraduate Fellowship (HKPFS), Hong Kong RGC"],
+  ["2025", "HKUST RedBird Recruitment PhD Award"],
+  ["2024", "Best Paper Award Finalist, National Student Forum on Industrial Engineering"],
+  ["2023", "Outstanding Undergraduate Thesis, SCUT"],
+  ["2023", "First-class Scholarship, Science and Technology Innovation Competition Fund, SCUT"],
+  ["2022", "National Scholarship, Ministry of Education of China"],
+  ["2022", "Meritorious Prize, Mathematical Contest in Modeling"],
+  ["2022", "First Prize, Asia-Pacific Mathematical Contest in Modeling (APMCM)"],
+  ["2021", "First-class Academic Scholarship, SCUT"],
+];
+
 export default function Home() {
   return (
     <div className="site">
       <header className="header">
         <a className="site-name" href="#top">
-          Your Name
+          Shiyuan Piao
         </a>
         <nav aria-label="Primary navigation">
           <a href="#about">About</a>
-          <a href="#news">News</a>
-          <a href="#experience">Experience</a>
+          <a href="#news" hidden>
+            News
+          </a>
+          <a href="#education">Education</a>
           <a href="#awards">Awards</a>
           <a href="#life">Life</a>
-          <a href="#">CV</a>
+          <a href="/cv.pdf" target="_blank" rel="noreferrer">
+            CV
+          </a>
         </nav>
       </header>
 
       <main id="top">
         <section className="intro">
           <div className="intro-copy">
-            <h1>Your Name</h1>
-            <p className="role">Researcher &amp; Engineer · Institution</p>
-            <p className="summary">
-              I work on <strong>reliable machine learning</strong> and
-              intelligent systems, with a focus on uncertainty, forecasting,
-              and real-world decision-making.
+            <h1>Shiyuan Piao</h1>
+            <p className="role">
+              Ph.D. Candidate · Industrial Engineering and Decision Analytics ·
+              HKUST
             </p>
+            <p className="summary">
+              My current research interests include{" "}
+              <strong>spatio-temporal learning, uncertainty quantification, and AI agents</strong>,
+              with applications in operations management, energy systems,
+              batteries, and weather forecasting.
+            </p>
+            <div className="intro-links" aria-label="Contact and profile links">
+              <a href="mailto:shiyuan.piao@connect.ust.hk">Email</a>
+              <a
+                href="https://scholar.google.com/citations?user=loqTpOwAAAAJ&hl=zh-CN"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Google Scholar
+              </a>
+              <a
+                href="https://www.linkedin.com/in/shiyuan-piao-3978ba216/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+              <a href="/cv.pdf" target="_blank" rel="noreferrer">
+                Download CV
+              </a>
+            </div>
           </div>
           <div className="portrait" aria-label="Portrait photo placeholder">
-            <span>Portrait</span>
-            <small>Replace with your photo</small>
+            <span>SP</span>
+            <small>Portrait</small>
           </div>
         </section>
 
         <section className="section" id="about">
           <h2>
-            <span className="section-mark" aria-hidden="true">○</span>
-            About Me
+            <span className="section-mark" aria-hidden="true">
+              ○
+            </span>
+            About
           </h2>
           <div className="about-copy">
             <p>
-              I am currently a researcher at University or Institution. My work
-              explores how learning systems can remain reliable when data,
-              environments, and human needs change.
+              I am a Ph.D. candidate at The Hong Kong University of Science and
+              Technology, supervised by Prof.{" "}
+              <a
+                href="https://ieda.ust.hk/dfaculty/tsung/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Fugee Tsung
+              </a>
+              .
             </p>
             <p>
-              I enjoy careful experiments, clear writing, and collaborations
-              that connect methodological research with useful systems.
+              Before joining HKUST, I received an M.Phil. in Data Science and
+              Analytics from HKUST(GZ), and completed undergraduate studies in
+              Management Science and Computer Science at South China University
+              of Technology. My current research interests include
+              spatio-temporal learning, uncertainty quantification, and AI
+              agents, with applications in operations management, energy
+              systems, batteries, and weather forecasting. Some of my recent
+              work is in collaboration with{" "}
+              <a
+                href="https://www.goldwind.com/en/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Goldwind
+              </a>
+              .
+            </p>
+            <p>
+              I am also interested in quantum computing, causal inference, and
+              AI for Finance (AI4Fin). If you are interested in any of these
+              topics, I would be glad to connect and exchange ideas—{" "}
+              <a href="mailto:shiyuan.piao@connect.ust.hk">
+                feel free to reach out anytime
+              </a>
+              .
             </p>
           </div>
         </section>
 
-        <section className="section" id="news">
+        <section className="section" id="news" hidden>
           <h2>
-            <span className="section-mark" aria-hidden="true">▣</span>
+            <span className="section-mark" aria-hidden="true">
+              ▣
+            </span>
             News
           </h2>
           <ul className="news-card">
             <li>
-              <strong>[Jul. 2026]</strong>
-              <span>Add a recent project, talk, or announcement here.</span>
+              <strong>[Jun. 2026]</strong>
+              <span>Passed my Ph.D. Qualifying Examination (QE).</span>
             </li>
             <li>
               <strong>[May 2026]</strong>
-              <span>Add another short update here.</span>
+              <span>
+                Two papers on wind-power forecasting and battery state
+                estimation were accepted by ACM SIGKDD 2026.
+              </span>
+            </li>
+            <li>
+              <strong>[Sep. 2025]</strong>
+              <span>Started the Ph.D. program at HKUST.</span>
             </li>
           </ul>
         </section>
 
-        <section className="section" id="experience">
+        <section className="section" id="education">
           <h2>
-            <span className="section-mark" aria-hidden="true">◇</span>
-            Experience
+            <span className="section-mark" aria-hidden="true">
+              ◇
+            </span>
+            Education
           </h2>
           <div className="timeline">
             <article>
-              <time>2024 — Present</time>
+              <time>Sep. 2025 — Present</time>
               <div>
-                <h3>Researcher / Position Title</h3>
-                <p>University or Institution</p>
-                <small>A short description of your role or research focus.</small>
+                <h3>
+                  Ph.D. Candidate in Industrial Engineering and Decision
+                  Analytics
+                </h3>
+                <p>The Hong Kong University of Science and Technology</p>
+                <small>
+                  Advisor: Prof.{" "}
+                  <a
+                    href="https://ieda.ust.hk/dfaculty/tsung/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Fugee Tsung
+                  </a>
+                </small>
               </div>
             </article>
-            <article>
-              <time>2020 — 2024</time>
-              <div>
-                <h3>Ph.D. in Your Field</h3>
-                <p>University Name</p>
-                <small>A short description of your degree or experience.</small>
+            <article className="education-bundle education-mphil">
+              <div className="education-row">
+                <time>Sep. 2023 — Aug. 2025</time>
+                <div>
+                  <h3>M.Phil. in Data Science and Analytics</h3>
+                  <p>
+                    The Hong Kong University of Science and Technology
+                    (Guangzhou)
+                  </p>
+                  <small>
+                    Advisors: Prof.{" "}
+                    <a
+                      href="https://ieda.ust.hk/dfaculty/tsung/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Fugee Tsung
+                    </a>{" "}
+                    and Prof.{" "}
+                    <a
+                      href="https://facultyprofiles.hkust-gz.edu.cn/faculty-personal-page/LIANG-Yuxuan/yuxuanliang"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Yuxuan Liang
+                    </a>
+                  </small>
+                </div>
+              </div>
+              <div className="education-row education-visit-row">
+                <time>Jun. — Aug. 2025</time>
+                <div className="visit-copy">
+                  <span className="visit-title">Visiting Student</span>
+                  <span className="visit-meta">
+                    Hanyang University · Host: Prof.{" "}
+                    <a
+                      href="http://psm.hanyang.ac.kr/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Suk Joo BAE
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </article>
+            <article className="education-bundle">
+              <div className="education-row">
+                <time>Sep. 2019 — Jun. 2023</time>
+                <div>
+                  <h3>B.Mgmt. in Management Science</h3>
+                </div>
+              </div>
+              <div className="education-row">
+                <time>Sep. 2020 — Jun. 2023</time>
+                <div>
+                  <h3>B.C.S. in Computer Science and Technology</h3>
+                </div>
+              </div>
+              <div className="education-institution">
+                <span aria-hidden="true" />
+                <div>
+                  <p>South China University of Technology</p>
+                  <small>
+                    Undergraduate mentors: Prof.{" "}
+                    <a
+                      href="https://faculty.scut.edu.cn/gsgl/nbz/main.htm"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Baozhuang Niu
+                    </a>
+                    , Prof.{" "}
+                    <a
+                      href="https://cnsba.scut.edu.cn/2020/0311/c24831a365965/page.htm"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Shanshi Liu
+                    </a>
+                    , and Prof.{" "}
+                    <a
+                      href="https://faculty.scut.edu.cn/gsgl/skw/main.htm"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Kaiwen Shen
+                    </a>
+                  </small>
+                </div>
+              </div>
+              <div className="education-row education-visit-row">
+                <time>Jul. — Aug. 2021</time>
+                <div className="visit-copy">
+                  <span className="visit-title">Visiting Student</span>
+                  <span className="visit-meta">
+                    McGill University · Machine Learning Group
+                  </span>
+                </div>
               </div>
             </article>
           </div>
@@ -94,50 +283,73 @@ export default function Home() {
 
         <section className="section" id="awards">
           <h2>
-            <span className="section-mark" aria-hidden="true">☆</span>
-            Awards
+            <span className="section-mark" aria-hidden="true">
+              ☆
+            </span>
+            Honors &amp; Awards
           </h2>
           <ul className="award-list">
-            <li>
-              <strong>[2026]</strong>
-              <span>Award or Fellowship Name.</span>
-            </li>
-            <li>
-              <strong>[2025]</strong>
-              <span>Best Paper, Outstanding Project, or Academic Honor.</span>
-            </li>
-            <li>
-              <strong>[2024]</strong>
-              <span>Scholarship or Graduate Research Award.</span>
-            </li>
+            {awards.map(([year, award]) => (
+              <li key={`${year}-${award}`}>
+                <strong>{year}</strong>
+                <span>{award}</span>
+              </li>
+            ))}
           </ul>
         </section>
 
         <section className="section" id="life">
           <h2>
-            <span className="section-mark" aria-hidden="true">☼</span>
+            <span className="section-mark" aria-hidden="true">
+              ☼
+            </span>
             Beyond Research
           </h2>
           <div className="life-note">
             <p>
-              Outside research, I enjoy quiet walks, photography, good coffee,
-              and discovering new places.
+              Outside research, I enjoy cycling, badminton, and hiking.
+              Recently, I have also been training for trail running and
+              marathons.
             </p>
             <div className="hobbies" aria-label="Personal interests">
-              <span>Photography</span>
-              <span>Coffee</span>
+              <span>Cycling</span>
+              <span>Badminton</span>
               <span>Hiking</span>
+              <span>Trail running</span>
+              <span>Marathon training</span>
             </div>
           </div>
         </section>
       </main>
 
       <footer className="footer">
-        <span>© 2026 Your Name</span>
+        <span>© 2026 Shiyuan Piao</span>
         <div>
-          <a href="mailto:hello@example.com">Email</a>
-          <a href="#">Scholar</a>
-          <a href="#">GitHub</a>
+          <a href="mailto:shiyuan.piao@connect.ust.hk">Email</a>
+          <a
+            href="https://scholar.google.com/citations?user=loqTpOwAAAAJ&hl=zh-CN"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Scholar
+          </a>
+          <a
+            href="https://www.linkedin.com/in/shiyuan-piao-3978ba216/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/shawn-sypiao"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
+          <a href="/cv.pdf" target="_blank" rel="noreferrer">
+            CV
+          </a>
         </div>
       </footer>
     </div>

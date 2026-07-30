@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name — Researcher & Engineer",
+  title: "Shiyuan Piao — Academic Homepage",
   description:
-    "Personal homepage for a researcher working on reliable machine learning and intelligent systems.",
+    "Academic homepage of Shiyuan Piao, a Ph.D. candidate at HKUST studying spatio-temporal learning, uncertainty quantification, and AI agents with applications in operations management, energy systems, batteries, and weather forecasting.",
 };
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
+    <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
