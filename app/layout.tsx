@@ -16,6 +16,14 @@ export const metadata: Metadata = {
   title: "Shiyuan Piao — Academic Homepage",
   description:
     "Academic homepage of Shiyuan Piao, a Ph.D. candidate at HKUST studying spatio-temporal learning, uncertainty quantification, and AI agents with applications in operations management, energy systems, batteries, and weather forecasting.",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function RootLayout({
