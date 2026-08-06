@@ -79,8 +79,12 @@ a:hover {
   align-items: center;
   display: grid;
   gap: 64px;
-  grid-template-columns: 1fr 155px;
+  grid-template-columns: 1fr;
   padding: 66px 0 72px;
+}
+
+.intro-with-portrait {
+  grid-template-columns: 1fr 155px;
 }
 
 .intro h1 {
@@ -135,20 +139,6 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-}
-
-.portrait span {
-  font-size: 26px;
-  font-weight: 650;
-  letter-spacing: -0.04em;
-}
-
-.portrait small {
-  color: #81879a;
-  font-size: 7px;
-  letter-spacing: 0.11em;
-  margin-top: 6px;
-  text-transform: uppercase;
 }
 
 .portrait-photo {

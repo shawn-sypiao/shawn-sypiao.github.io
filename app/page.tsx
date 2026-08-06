@@ -11,8 +11,8 @@ const awards = [
   ["2021", "First-class Academic Scholarship, SCUT"],
 ];
 
-// Two portrait modes: set `src` to a photo (e.g. "/portrait.jpg") to show it;
-// leave it null to keep the text placeholder.
+// Two modes: set `src` to a photo (e.g. "/portrait.jpg") to show a portrait;
+// leave it null to keep the intro text-only without any placeholder.
 const portrait = {
   src: null as string | null,
   alt: "Portrait of Shiyuan Piao",
@@ -37,7 +37,9 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="intro">
+        <section
+          className={portrait.src ? "intro intro-with-portrait" : "intro"}
+        >
           <div className="intro-copy">
             <h1>Shiyuan Piao</h1>
             <p className="role">
@@ -68,23 +70,15 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div
-            className="portrait"
-            aria-label={portrait.src ? portrait.alt : "Portrait photo placeholder"}
-          >
-            {portrait.src ? (
+          {portrait.src ? (
+            <div className="portrait">
               <img
                 className="portrait-photo"
                 src={portrait.src}
                 alt={portrait.alt}
               />
-            ) : (
-              <>
-                <span>SP</span>
-                <small>Portrait</small>
-              </>
-            )}
-          </div>
+            </div>
+          ) : null}
         </section>
 
         <section className="section" id="about">
