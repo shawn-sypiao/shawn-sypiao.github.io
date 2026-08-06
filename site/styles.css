@@ -78,7 +78,7 @@ a:hover {
   align-items: center;
   display: grid;
   gap: 64px;
-  grid-template-columns: 1fr 155px;
+  grid-template-columns: 1fr;
   padding: 66px 0 72px;
 }
 

@@ -61,10 +61,11 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="portrait" aria-label="Portrait photo placeholder">
+          {/* Muted: portrait photo placeholder, re-enable when adding a photo */}
+          {/* <div className="portrait" aria-label="Portrait photo placeholder">
             <span>SP</span>
             <small>Portrait</small>
-          </div>
+          </div> */}
         </section>
 
         <section className="section" id="about">
