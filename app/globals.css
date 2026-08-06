@@ -79,7 +79,7 @@ a:hover {
   align-items: center;
   display: grid;
   gap: 64px;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 155px;
   padding: 66px 0 72px;
 }
 
@@ -149,6 +149,14 @@ a:hover {
   letter-spacing: 0.11em;
   margin-top: 6px;
   text-transform: uppercase;
+}
+
+.portrait-photo {
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 .section {

@@ -11,6 +11,13 @@ const awards = [
   ["2021", "First-class Academic Scholarship, SCUT"],
 ];
 
+// Two portrait modes: set `src` to a photo (e.g. "/portrait.jpg") to show it;
+// leave it null to keep the text placeholder.
+const portrait = {
+  src: null as string | null,
+  alt: "Portrait of Shiyuan Piao",
+};
+
 export default function Home() {
   return (
     <div className="site">
@@ -61,11 +68,23 @@ export default function Home() {
               </a>
             </div>
           </div>
-          {/* Muted: portrait photo placeholder, re-enable when adding a photo */}
-          {/* <div className="portrait" aria-label="Portrait photo placeholder">
-            <span>SP</span>
-            <small>Portrait</small>
-          </div> */}
+          <div
+            className="portrait"
+            aria-label={portrait.src ? portrait.alt : "Portrait photo placeholder"}
+          >
+            {portrait.src ? (
+              <img
+                className="portrait-photo"
+                src={portrait.src}
+                alt={portrait.alt}
+              />
+            ) : (
+              <>
+                <span>SP</span>
+                <small>Portrait</small>
+              </>
+            )}
+          </div>
         </section>
 
         <section className="section" id="about">
