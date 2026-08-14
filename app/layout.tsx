@@ -13,15 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://shawn-sypiao.github.io"),
   title: "Shiyuan Piao — Academic Homepage",
   description:
     "Academic homepage of Shiyuan Piao, a Ph.D. candidate at HKUST studying spatio-temporal learning, uncertainty quantification, and AI agents with applications in operations management, energy systems, batteries, and weather forecasting.",
+  alternates: {
+    canonical: "/",
+  },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   },
 };
