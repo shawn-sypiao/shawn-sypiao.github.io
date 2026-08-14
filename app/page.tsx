@@ -58,6 +58,7 @@ export default function Home() {
                 href="https://scholar.google.com/citations?user=loqTpOwAAAAJ&hl=zh-CN"
                 target="_blank"
                 rel="noreferrer"
+                hidden
               >
                 Google Scholar
               </a>
@@ -65,6 +66,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/shiyuan-piao-3978ba216/"
                 target="_blank"
                 rel="noreferrer"
+                hidden
               >
                 LinkedIn
               </a>
@@ -249,7 +251,7 @@ export default function Home() {
                 <div>
                   <p>South China University of Technology</p>
                   <small>
-                    Undergraduate mentors: Prof.{" "}
+                    Advisors: Prof.{" "}
                     <a
                       href="https://faculty.scut.edu.cn/gsgl/nbz/main.htm"
                       target="_blank"
@@ -345,6 +347,7 @@ export default function Home() {
             href="https://www.linkedin.com/in/shiyuan-piao-3978ba216/"
             target="_blank"
             rel="noreferrer"
+            hidden
           >
             LinkedIn
           </a>
